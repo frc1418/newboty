@@ -1,0 +1,14 @@
+language: python
+python:
+    - 3.6
+notifications:
+    email: false
+install:
+    - "pip install -r requirements.txt"
+jobs:
+  include:
+    - stage: test
+      script: ./robot_test.sh
+    - stage: format
+      script: ./format_test.sh
+cache: pip
